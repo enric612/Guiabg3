@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Detallada Paladí BG3 - Acte 1</title>
+    <title>Guia PALADÍ BG3 - Acte 1 Complet</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,11 +27,11 @@
                     colors: {
                         gold: '#d4af37',     
                         darkGold: '#8c7546', 
-                        pureBlack: '#050505',
-                        panel: '#0f0f0f',    
+                        pureBlack: '#000000',
+                        panel: '#0a0a0a',    
                         border: '#262626',   
                         
-                        // Tags
+                        // Tags Personatges
                         paladin: '#ffd700',  
                         laezel: '#ff4d4d',   
                         sh: '#e0e0e0',    
@@ -44,53 +44,22 @@
     </script>
 
     <style>
-        body {
-            background-color: #000000;
-            color: #d1d5db; /* Gray-300 */
-        }
+        body { background-color: #000000; color: #d4d4d4; }
         
-        .item-link {
-            font-weight: 600;
-            border-bottom: 1px dotted #555;
-            cursor: help;
-            transition: all 0.2s;
-        }
+        .item-link { font-weight: 600; border-bottom: 1px dotted #555; cursor: help; transition: all 0.2s; color: #d4af37; }
         .item-link:hover { color: #fff; border-bottom: 1px solid #fff; }
 
-        .tag {
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            padding: 2px 6px;
-            border-radius: 3px;
-            margin-left: 6px;
-            vertical-align: middle;
-            border: 1px solid;
-            letter-spacing: 0.05em;
-            display: inline-block;
-        }
-        
+        .tag { font-family: 'Cinzel', serif; font-size: 0.65rem; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; border: 1px solid; letter-spacing: 0.05em; display: inline-block; }
         .tag-mc { color: #ffd700; border-color: #ffd700; background: rgba(255, 215, 0, 0.1); }
         .tag-laezel { color: #ff4d4d; border-color: #ff4d4d; background: rgba(255, 77, 77, 0.1); }
         .tag-sh { color: #e0e0e0; border-color: #e0e0e0; background: rgba(224, 224, 224, 0.1); }
         .tag-gale { color: #4da6ff; border-color: #4da6ff; background: rgba(77, 166, 255, 0.1); }
         .tag-astarion { color: #b366ff; border-color: #b366ff; background: rgba(179, 102, 255, 0.1); }
 
-        .step-number {
-            font-family: 'Cinzel', serif;
-            color: #4b5563;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-right: 1rem;
-            min-width: 2rem;
-        }
-
-        h3 { color: #d4af37; font-family: 'Cinzel', serif; margin-bottom: 1rem; font-size: 1.25rem; border-bottom: 1px solid #262626; padding-bottom: 0.5rem; }
-        p { margin-bottom: 1rem; line-height: 1.7; }
+        .step-container { margin-bottom: 2rem; border-left: 1px solid #333; padding-left: 1.5rem; position: relative; }
+        .step-num { position: absolute; left: -2.25rem; top: 0; font-family: 'Cinzel', serif; color: #404040; font-size: 1.5rem; font-weight: bold; width: 2rem; text-align: right; }
         
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
+        h3 { color: #d4af37; font-family: 'Cinzel', serif; margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; border-bottom: 1px solid #262626; padding-bottom: 0.5rem; }
     </style>
 </head>
 <body class="font-body antialiased min-h-screen">
@@ -99,394 +68,464 @@
 
     <script type="text/babel">
 
-        // --- COMPONENTS ---
-
         const Header = () => (
-            <header className="py-24 text-center border-b border-border bg-gradient-to-b from-neutral-900 to-pureBlack">
-                <h1 className="text-4xl md:text-6xl font-title font-black text-gold tracking-widest uppercase mb-4 drop-shadow-lg">
-                    Guia Detallada: Acte 1
+            <header className="py-24 text-center border-b border-border bg-pureBlack">
+                <h1 className="text-4xl md:text-6xl font-title font-black text-gold tracking-widest uppercase mb-6">
+                    Guia TOTAL Acte 1
                 </h1>
-                <p className="text-lg text-gray-400 font-title italic tracking-wide max-w-3xl mx-auto">
-                    Pas a pas complet per a Paladín Radiante, Lae'zel Caballero Arcano, Shadowheart Luz, Gale Evocación i Astarion Embaucador.
+                <p className="text-lg text-gray-400 font-title italic tracking-wide mb-8 max-w-2xl mx-auto">
+                    La guia definitiva pas a pas per a aconseguir tots els objectes de les builds de "TodoRPGS", incloent la Forja de Adamantina al complet.
                 </p>
+                <div className="flex flex-wrap justify-center gap-3 text-xs font-title uppercase tracking-widest text-darkGold">
+                    <span className="border border-border px-3 py-1">Paladín Radiante</span>
+                    <span className="border border-border px-3 py-1">Lae'zel Caballero Arcano</span>
+                    <span className="border border-border px-3 py-1">Shadowheart Luz</span>
+                    <span className="border border-border px-3 py-1">Gale Evocación</span>
+                    <span className="border border-border px-3 py-1">Astarion Tramposo</span>
+                </div>
             </header>
         );
 
         const Item = ({ name, char }) => {
-            let colorClass = "text-gold";
             let tag = null;
-
             if (char === 'mc') tag = <span className="tag tag-mc">Paladín</span>;
             if (char === 'laezel') tag = <span className="tag tag-laezel">Lae'zel</span>;
             if (char === 'sh') tag = <span className="tag tag-sh">Shadowheart</span>;
             if (char === 'gale') tag = <span className="tag tag-gale">Gale</span>;
             if (char === 'astarion') tag = <span className="tag tag-astarion">Astarion</span>;
-
-            return (
-                <span>
-                    <span className={`${colorClass} item-link`}>{name}</span>
-                    {tag}
-                </span>
-            );
+            return <span><span className="item-link">{name}</span>{tag}</span>;
         };
 
         const Warning = ({ children }) => (
-            <div className="my-8 border-l-4 border-red-800 bg-red-950/30 p-6 rounded-r-lg">
-                <h4 className="text-red-500 font-bold font-title uppercase mb-2 flex items-center gap-2">
-                    <span className="text-2xl">⚠️</span> Perill Crític
-                </h4>
-                <div className="text-gray-300 italic">{children}</div>
+            <div className="my-8 border border-red-900/40 bg-red-950/20 p-6 rounded relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-red-800"></div>
+                <div className="flex items-start gap-4">
+                    <span className="text-red-500 text-2xl">⚠️</span>
+                    <div className="text-gray-300 italic text-lg">{children}</div>
+                </div>
             </div>
         );
 
         const Tip = ({ children }) => (
-            <div className="my-8 border-l-4 border-emerald-700 bg-emerald-950/30 p-6 rounded-r-lg">
-                <h4 className="text-emerald-500 font-bold font-title uppercase mb-2 flex items-center gap-2">
-                    <span className="text-2xl">💡</span> Estratègia
-                </h4>
-                <div className="text-gray-300 italic">{children}</div>
+            <div className="my-8 border border-green-900/40 bg-green-950/20 p-6 rounded relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-green-800"></div>
+                <div className="flex items-start gap-4">
+                    <span className="text-green-500 text-2xl">💡</span>
+                    <div className="text-gray-300 italic text-lg">{children}</div>
+                </div>
+            </div>
+        );
+
+        const Step = ({ n, children }) => (
+            <div className="step-container">
+                <div className="step-num">{n}</div>
+                <div className="text-lg leading-relaxed text-gray-300">{children}</div>
             </div>
         );
 
         const Phase = ({ num, title, level, children }) => (
-            <section className="mb-32">
-                <div className="flex items-end gap-6 mb-10 border-b border-border pb-6 sticky top-0 bg-pureBlack/95 backdrop-blur z-10 pt-6">
-                    <span className="text-7xl font-title font-bold text-neutral-800 select-none leading-none">{num}</span>
+            <section className="mb-40 px-4 md:px-0 max-w-3xl mx-auto">
+                <div className="flex items-baseline gap-6 mb-12 border-b border-border pb-6 sticky top-0 bg-pureBlack/95 pt-6 z-10 backdrop-blur-sm">
+                    <span className="text-7xl font-title font-bold text-neutral-800 select-none">{num}</span>
                     <div className="flex-1">
                         <h2 className="text-3xl md:text-4xl font-title text-gold mb-2">{title}</h2>
-                        <span className="text-sm font-title text-gray-500 uppercase border border-border px-3 py-1 rounded tracking-widest">
-                            Nivell Recomanat: {level}
+                        <span className="text-xs font-title text-gray-500 uppercase border border-border px-2 py-1 rounded tracking-widest">
+                            Nivell {level}
                         </span>
                     </div>
                 </div>
-                <div className="px-2 md:px-8 text-lg">
-                    {children}
+                <div>{children}</div>
+            </section>
+        );
+
+        const InventorySection = () => (
+            <section className="bg-panel border-t border-border mt-20 py-20">
+                <div className="max-w-6xl mx-auto px-6">
+                    <h2 className="text-4xl font-title text-gold text-center mb-16 uppercase tracking-widest">Resum Final de Builds (Acte 1)</h2>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        {/* Paladín */}
+                        <div className="bg-neutral-900/50 border border-yellow-700/30 p-6 rounded-lg">
+                            <h3 className="!mt-0 !text-xl !border-none text-paladin">🗡️ Paladín (Radiante)</h3>
+                            <ul className="space-y-3 text-sm text-gray-400">
+                                <li><strong>Arma:</strong> <span className="text-white">Sangre de Lathander</span> (Monestir)</li>
+                                <li><strong>Cos:</strong> <span className="text-white">Armadura Luminosa</span> (Underdark)</li>
+                                <li><strong>Anell:</strong> <span className="text-white">Anillo de Protección</span> (Robatori Ídol)</li>
+                                <li><strong>Casc:</strong> <span className="text-white">Casco de Haste</span> (Cofre Aldea Marchita)</li>
+                                <li><strong>Buff:</strong> <span className="text-white">Amor de Loviatar</span> (Goblin Masoquista)</li>
+                            </ul>
+                        </div>
+
+                        {/* Lae'zel */}
+                        <div className="bg-neutral-900/50 border border-red-700/30 p-6 rounded-lg">
+                            <h3 className="!mt-0 !text-xl !border-none text-laezel">💀 Lae'zel (Caballero Arcano)</h3>
+                            <ul className="space-y-3 text-sm text-gray-400">
+                                <li><strong>Arma:</strong> <span className="text-white">Espada de Plata Astral</span> (Robatori Acte 1)</li>
+                                <li><strong>Cos:</strong> <span className="text-white">Armadura Adamantina</span> (Pesada - Grymforge)</li>
+                                <li><strong>Anell:</strong> <span className="text-white">Anillo del Regreso</span> (Vital per llançar armes)</li>
+                                <li><strong>Cap:</strong> <span className="text-white">Diadema de Intelecto</span> (Ogres)</li>
+                            </ul>
+                        </div>
+
+                        {/* Shadowheart */}
+                        <div className="bg-neutral-900/50 border border-gray-600/30 p-6 rounded-lg">
+                            <h3 className="!mt-0 !text-xl !border-none text-sh">☀️ Shadowheart (Healer Luz)</h3>
+                            <ul className="space-y-3 text-sm text-gray-400">
+                                <li><strong>Arma:</strong> <span className="text-white">Phalar Aluve</span> (Underdark - Support)</li>
+                                <li><strong>Mans:</strong> <span className="text-white">Guantes del Hellrider</span> (Zevlor)</li>
+                                <li><strong>Peus:</strong> <span className="text-white">Botas de Ayuda</span> (Goblin Grat)</li>
+                                <li><strong>Escut:</strong> <span className="text-white">Escudo de Adamantina</span> (Grymforge)</li>
+                            </ul>
+                        </div>
+
+                        {/* Gale */}
+                        <div className="bg-neutral-900/50 border border-blue-700/30 p-6 rounded-lg">
+                            <h3 className="!mt-0 !text-xl !border-none text-gale">⚡ Gale (Evocación)</h3>
+                            <ul className="space-y-3 text-sm text-gray-400">
+                                <li><strong>Arma:</strong> <span className="text-white">La Chispa de los Conjuros</span> (Waukeen)</li>
+                                <li><strong>Coll:</strong> <span className="text-white">Colgante de Restauración</span> (Arboleda)</li>
+                                <li><strong>Anell:</strong> <span className="text-white">Anillo de luz</span> (Torre Arcana)</li>
+                            </ul>
+                        </div>
+
+                        {/* Astarion */}
+                        <div className="bg-neutral-900/50 border border-purple-700/30 p-6 rounded-lg">
+                            <h3 className="!mt-0 !text-xl !border-none text-astarion">🎭 Astarion (Trickster)</h3>
+                            <ul className="space-y-3 text-sm text-gray-400">
+                                <li><strong>A Distància:</strong> <span className="text-white">Ballesta Harold</span> (Zhentarim)</li>
+                                <li><strong>Cos:</strong> <span className="text-white">Armadura de Araña</span> (Minthara)</li>
+                                <li><strong>Mans:</strong> <span className="text-white">Guantes de Destreza</span> (Creche Githyanki)</li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </section>
         );
 
-        const Step = ({ num, children }) => (
-            <div className="flex items-start mb-6 group">
-                <div className="step-number group-hover:text-gold transition-colors">{num}</div>
-                <div className="flex-1 pt-1">{children}</div>
-            </div>
-        );
-
-        // --- APP ---
-
         const App = () => {
             return (
-                <div className="max-w-5xl mx-auto px-6 pb-40">
-                    <Header />
+                <div>
+                    <div className="max-w-4xl mx-auto pb-20">
+                        <Header />
 
-                    <main className="mt-20">
+                        <main className="mt-16">
 
-                        {/* FASE 0 */}
-                        <Phase num="0" title="L'Espasa de Plata (Build Lae'zel)" level="2">
-                            <p>
-                                Aquest és el pas més important i delicat de tota la guia. Lae'zel necessita la seva arma final ara mateix. Si ho fas malament, perds l'oportunitat.
-                            </p>
+                            {/* FASE 0 */}
+                            <Phase num="0" title="PRIORITAT: L'Espasa de Plata" level="2">
+                                <p>El primer que farem al sortir del pròleg és trencar el joc aconseguint l'arma final de Lae'zel.</p>
+                                
+                                <Step n="1">
+                                    Ves directament al campament. Parla amb <strong>Mustio</strong>. Paga 100 or i contracta un <strong>Mercenari</strong> (Clérigo o Hechicero són els millors).
+                                </Step>
+                                <Step n="2">
+                                    Puja de nivell el mercenari. Assegura't d'agafar l'encanteri <Item name="Orden Imperiosa" /> (Command) i selecciona la variant "Soltar".
+                                </Step>
+                                <Step n="3">
+                                    Aconsegueix invisibilitat: Comprant una <Item name="Poción de Invisibilidad" /> a la Tía Ethel (Arboleda) o fent que Gale aprengui l'encanteri a nivell 3.
+                                </Step>
+                                <Step n="4">
+                                    Surt de l'Arboleda. Viatja a l'Oest, passa l'Aldea Marchita, fins al pont de fusta nord-oest (Waukeen's Rest). Veuràs un drac.
+                                </Step>
+                                <Warning>
+                                    <strong>ATURA'T AL PONT.</strong> No avancis cap al canvi de mapa (Paso de la Montaña). Si canvies de zona, els Tieflings moriran automàticament.
+                                </Warning>
+                                <Step n="5">
+                                    Separa el grup (desvincula els retrats). Deixa el Paladí i els altres lluny. Agafa <strong>només al Mercenari</strong>.
+                                </Step>
+                                <Step n="6">
+                                    Beu la poció d'Invisibilitat. Activa el <strong>Modo por Turnos</strong>. Corre fins a posar-te al costat de <strong>Kith'rak Voss</strong> (el genet).
+                                </Step>
+                                <Step n="7">
+                                    <strong>GUARDA PARTIDA (F5).</strong> Això és vital. La probabilitat d'èxit és baixa (10-15%).
+                                </Step>
+                                <Step n="8">
+                                    Llança <strong>Orden Imperiosa: Soltar</strong>. Si falles, carrega. Si encertes, l'espasa caurà a terra.
+                                </Step>
+                                <Step n="9">
+                                    Usa la teva acció per agafar l'<Item name="Espada de Plata del Plano Astral" char="laezel" /> del terra.
+                                </Step>
+                                <Step n="10">
+                                    La patrulla matarà el mercenari. No passa res. Ves al campament, reviu-lo amb Mustio, i agafa l'espasa del seu inventari. Equipa-la a Lae'zel.
+                                </Step>
+                            </Phase>
 
-                            <h3 className="mt-8">1. Preparació al Campament</h3>
-                            <Step num="01">
-                                Ves al teu campament i parla amb <strong>Mustio</strong> (el no-mort de la cripta). Has de pagar 100 monedes per contractar un <strong>Mercenari</strong>. Tria un Clérigo o Hechicero (necessitem algú que tingui màgia però que no ens importi que mori).
-                            </Step>
-                            <Step num="02">
-                                Puja de nivell al mercenari. Assegura't de seleccionar l'encanteri <Item name="Orden Imperiosa" /> (Command) i, si pots, la dote "Alerta" o pujar la Destresa per tenir iniciativa.
-                            </Step>
-                            <Step num="03">
-                                Necessites ser invisible. Si tens una <Item name="Poción de Invisibilidad" /> (la ven la Tía Ethel a l'Arboleda o l'Arron), dona-li al mercenari. Si no, fes que Gale li llanci l'encanteri "Invisibilidad".
-                            </Step>
+                            {/* FASE 1 */}
+                            <Phase num="1" title="Arboleda & Configuració Builds" level="3">
+                                <p>Tornem a l'inici per configurar l'equip i agafar les missions.</p>
 
-                            <h3 className="mt-8">2. El Robatori al Pont</h3>
-                            <Step num="04">
-                                Viatja a l'Aldea Marchita. Ves cap a l'oest (esquerra del mapa) fins a trobar un gran pont de fusta on veuràs un drac vermell i una patrulla Githyanki. La zona es diu <strong>Waukeen's Rest (El Descanso de Waukeen)</strong>.
-                            </Step>
-                            <Warning>
-                                <strong>ATURAT ABANS DEL PONT.</strong> Separa el grup (desvincula els retrats). Deixa el teu Paladí, Lae'zel i la resta molt enrere, amagats. Selecciona <strong>NOMÉS</strong> al mercenari.
-                            </Warning>
-                            <Step num="05">
-                                Amb el mercenari: Beu la poció d'Invisibilitat. Activa immediatament el <strong>Modo por Turnos</strong> (Shift + Espai).
-                            </Step>
-                            <Step num="06">
-                                Corre fins a posar-te just al costat de <strong>Kith'rak Voss</strong> (el líder que munta el drac).
-                            </Step>
-                            <Step num="07">
-                                <strong>FES UN GUARDAT RÀPID (F5).</strong> Això és vital perquè la probabilitat d'èxit és baixa (aprox 10-15%).
-                            </Step>
-                            <Step num="08">
-                                Llança l'encanteri <strong>Orden Imperiosa: Soltar</strong> (Command: Drop) sobre Voss.
-                                <br/>- <em>Si diu "Salvado":</em> Carrega partida (F8) i torna a provar.
-                                <br/>- <em>Si diu "Éxito":</em> Voss deixarà caure la seva espasa a terra.
-                            </Step>
-                            <Step num="09">
-                                En el mateix torn, usa la teva acció (o acció bonus si tens Velocitat) per recollir l'<Item name="Espada de Plata del Plano Astral" char="laezel" /> del terra.
-                            </Step>
-                            <Step num="10">
-                                La patrulla et matarà. No passa res. Deixa que el mercenari mori. Després, al campament, parla amb Mustio per reviure'l. L'espasa estarà al seu inventari. Equipa-la a Lae'zel.
-                            </Step>
-                        </Phase>
+                                <h3>1. Respec amb Mustio (Classes)</h3>
+                                <Step n="1">
+                                    <strong>Shadowheart:</strong> Canvia-la a <span className="text-sh">Clérigo (Dominio de la Luz)</span>. Stats: SAB 16+, CON 14, DES 14. (Això li dona Boles de Foc a nivell 5).
+                                </Step>
+                                <Step n="2">
+                                    <strong>Lae'zel (Nv 3):</strong> <span className="text-laezel">Guerrero (Caballero Arcano)</span>. Encanteris: Escudo, Onda Atronadora.
+                                </Step>
+                                <Step n="3">
+                                    <strong>Gale (Nv 2):</strong> <span className="text-gale">Mago (Evocación)</span>.
+                                </Step>
+                                <Step n="4">
+                                    <strong>Astarion (Nv 3):</strong> <span className="text-astarion">Pícaro (Embaucador Arcano)</span>.
+                                </Step>
 
-                        {/* FASE 1 */}
-                        <Phase num="1" title="Arboleda i Configuració de Builds" level="3">
-                            <p>Ara que tenim l'arma, hem de configurar els personatges perquè les builds funcionin des del principi.</p>
+                                <h3>2. Dieta de Gale (Items Brossa)</h3>
+                                <p>Gale necessita consumir 3 objectes màgics. Dona-li aquests per no perdre els bons:</p>
+                                <Step n="5">
+                                    <Item name="Colgante de Komira" />: Salva Arabella de la serp (parla amb Kagha). Després parla amb els pares a l'entrada de la cova.
+                                </Step>
+                                <Step n="6">
+                                    <Item name="Anillo de Rociada de Color" />: Ves a la platja est. Mata les Arpías. Salva el nen Mirkon. Segueix el camí fins al niu. L'anell és al cofre.
+                                </Step>
+                                <Step n="7">
+                                    <Item name="Guía del Vigilante" />: A la cripta de Mustio, al sarcòfag de la sala central.
+                                </Step>
 
-                            <h3 className="mt-8">1. Respec amb Mustio (Classes)</h3>
-                            <Step num="01">
-                                <strong>Shadowheart:</strong> Demana-li a Mustio que canviï la seva classe. Torna a triar Clérigo, però selecciona el <strong>Dominio de la Luz</strong>. Posa-li 16 de Saviesa i 14 de Destresa/Constitució. Això li dona boles de foc i millors atacs radiants.
-                            </Step>
-                            <Step num="02">
-                                <strong>Lae'zel:</strong> Quan pugi a nivell 3, tria la subclasse <strong>Caballero Arcano</strong> (Eldritch Knight). Tria els encanteris "Escudo" i "Onda Atronadora".
-                            </Step>
-                            <Step num="03">
-                                <strong>Gale:</strong> A nivell 2, tria l'escola de màgia <strong>Evocación</strong> (així les seves boles de foc no fan mal als aliats).
-                            </Step>
-                            <Step num="04">
-                                <strong>Astarion:</strong> A nivell 3, tria <strong>Embaucador Arcano</strong> (Arcane Trickster) per tenir més utilitat màgica.
-                            </Step>
+                                <h3>3. Els Guants de Zevlor</h3>
+                                <Step n="8">
+                                    Parla amb <strong>Zevlor</strong> (el líder Tiefling). És crucial per obtenir els <Item name="Guantes del Hellrider" char="sh" />.
+                                    <br/><em>Mètode 1:</em> Si exposes a Kagha (ho farem després), te'ls donarà com a recompensa.
+                                    <br/><em>Mètode 2 (Segur):</em> Zevlor també és un venedor. Quan parlis amb ell, prem el botó de "Comerciar" a baix a l'esquerra. Si els té, compra'ls. Són OBLIGATORIS per Shadowheart (donen resistència física a qui curi).
+                                </Step>
 
-                            <h3 className="mt-8">2. Dieta de Gale i Items Brossa</h3>
-                            <p>Gale et demanarà objectes màgics aviat. Dona-li aquests tres per no perdre els bons.</p>
-                            <Step num="05">
-                                <strong>Colgante de Komira:</strong> Salva l'Arabella de la serp a l'Arboleda (persuadeix a Kagha). Parla amb els pares de la nena a l'entrada de la cova. Et donaran l'amulet. (Guarda'l per Gale).
-                            </Step>
-                            <Step num="06">
-                                <strong>Anillo de Rociada de Color:</strong> Ves a la platja a l'est de l'Arboleda. Escolta el cant. Mata les Arpías i salva al nen. Segueix el camí fins al final (el niu). Dins del cofre hi ha l'anell. (Guarda'l per Gale).
-                            </Step>
-                            <Step num="07">
-                                <strong>Guía del Vigilante:</strong> A la Cripta on vas trobar a Mustio, a la sala gran amb trampes de foc, dins del sarcòfag central hi ha aquesta llança. (Guarda-la per Gale).
-                            </Step>
+                                <h3>4. Missió de Mol</h3>
+                                <Step n="9">
+                                    Ves al cau dels nens (necessites haver salvat Mirkon). Parla amb la Mol. Accepta robar l'Ídol. <strong>NO EL ROBIS ENCARA.</strong>
+                                </Step>
+                            </Phase>
 
-                            <h3 className="mt-8">3. Items Clau de l'Arboleda</h3>
-                            <Step num="08">
-                                <strong>Guantes del Hellrider:</strong> Parla amb Zevlor (el líder Tiefling). Si exposes la Kagha (ho farem després) o acabes amb els goblins, te'ls donarà. Assegura't de tenir-los. Són per a <Item name="Shadowheart" char="sh" />. Fan que les seves cures donin resistència al dany físic.
-                            </Step>
-                            <Step num="09">
-                                Parla amb la <strong>Mol</strong> al cau dels nens (necessites haver salvat al nen de les arpías per entrar). Accepta la missió de robar l'Ídol. <strong>NO EL ROBIS ENCARA</strong> o hi haurà una massacre.
-                            </Step>
-                        </Phase>
+                            {/* FASE 2 */}
+                            <Phase num="2" title="Wilderness, Risen Road & Items" level="3-4">
+                                <p>Anem a buscar els objectes específics de les builds a l'exterior.</p>
 
-                        {/* FASE 2 */}
-                        <Phase num="2" title="Exploració i Items Específics" level="3-4">
-                            <p>Anem a buscar les peces que falten per a les builds de Gale i Astarion.</p>
+                                <h3>Aldea Marchita</h3>
+                                <Step n="1">
+                                    Entra pacíficament. Recluta el gos Scratch. Atura el molí (palanca de FRE) per salvar al gnom Barcus.
+                                </Step>
+                                <Step n="2">
+                                    Parla amb els Ogres a la casa enrunada. Enganya'ls (Tirada Engany 15 o dona'ls 500 or) per obtenir el <Item name="Cuerno de Guerra de Lump" />.
+                                </Step>
 
-                            <h3 className="mt-8">1. Build de Gale (Waukeen's Rest)</h3>
-                            <Step num="01">
-                                Torna on vas veure el drac (Waukeen's Rest). Entra a l'edifici principal que està en flames.
-                            </Step>
-                            <Step num="02">
-                                Puja al pis de dalt. Trenca la porta on hi ha gent atrapada. Salva a la <strong>Consejera Florrick</strong>.
-                            </Step>
-                            <Step num="03">
-                                Com a recompensa, et deixarà triar entre 3 armes. Tria el bastó <Item name="La Chispa de los Conjuros" char="gale" /> (The Spellsparkler).
-                                <br/><em>Per què?</em> Dona "Cargas de Rayo" quan fas mal amb encanteris. És fonamental per la build d'Evocació de Gale.
-                            </Step>
+                                <h3>El Camí Ressuscitat (Nord)</h3>
+                                <Step n="3">
+                                    Salta el pont trencat al nord de l'Aldea. Baixa al riu per reclutar a <strong>Karlach</strong>.
+                                </Step>
+                                <Step n="4">
+                                    Puja a la casa de peatge (Peaje). Mata als "Paladins de Tyr" (són falsos). Agafa l'<Item name="Espada de la Justicia" /> (+2 CA). Útil pel Paladí fins a tenir la Lathander.
+                                </Step>
+                                <Step n="5">
+                                    <strong>Build Gale:</strong> Ves a l'edifici en flames (Waukeen's Rest). Entra i salva a la Consellera Florrick (pis de dalt). Tria de recompensa <Item name="La Chispa de los Conjuros" char="gale" /> (Spellsparkler). És el bastó elèctric base.
+                                </Step>
 
-                            <h3 className="mt-8">2. Build d'Astarion i el Frasco</h3>
-                            <Step num="04">
-                                Ves a la zona nord del mapa ("The Risen Road"), prop d'on hi ha hienes. Trobaràs una cova amb dos homes (Zhentarim) lluitant contra Gnolls.
-                            </Step>
-                            <Step num="05">
-                                Salva'ls. Parla amb el líder, Rugan. Usa intimidació o persuasió per convèncer-lo que et doni el <strong>Cofre de la Caravana</strong>. <strong>NO L'OBRIS.</strong>
-                            </Step>
-                            <Step num="06">
-                                Ves a l'Aldea Marchita. Entra a l'edifici del nord, baixa al soterrani, digues la contrasenya al guàrdia i entra a la <strong>Guarida Zhentarim</strong>.
-                            </Step>
-                            <Step num="07">
-                                Parla amb la líder, <strong>Zarys</strong>. Dona-li el cofre tancat. Això desbloqueja el seu inventari especial.
-                            </Step>
-                            <Step num="08">
-                                Compra la ballesta pesada <Item name="Harold" char="astarion" /> al venedor Brem.
-                                <br/><em>Per què?</em> Cada cop que Astarion dispari, té possibilitat d'aplicar "Bane" (penalitzador 1d4) a l'enemic. És boníssim.
-                            </Step>
-                            <Step num="09">
-                                Ara, com a Paladí de Venjança, jutja a aquests criminals. Mata a tots els Zhentarim de la cova.
-                            </Step>
-                            <Step num="10">
-                                Recupera el Cofre de la Caravana del cadàver de Zarys. Ara sí, obre'l i agafa el <Item name="Frasco de Hierro" />.
-                                <br/><em>Ús:</em> Si el llances, surt un monstre (Espectador) que ataca a tothom. Guarda'l per una emergència.
-                            </Step>
-                        </Phase>
+                                <h3>Build Astarion & Zhentarim</h3>
+                                <Step n="6">
+                                    Troba la cova amb els Gnolls (prop de Karlach). Salva a Rugan. Intimida'l per quedar-te el <strong>Cofre Tancat</strong>.
+                                </Step>
+                                <Step n="7">
+                                    Ves a l'Aldea Marchita, edifici nord, soterrani. Entra a la <strong>Guarida Zhentarim</strong>.
+                                </Step>
+                                <Step n="8">
+                                    Dona-li el cofre tancat a <strong>Zarys</strong>. Això desbloqueja el millor estoc del venedor Brem.
+                                </Step>
+                                <Step n="9">
+                                    Compra la ballesta <Item name="Harold" char="astarion" /> (Aplica Bane). Després mata als Zhentarim (Venjança).
+                                </Step>
+                                <Step n="10">
+                                    Recupera el cofre del cadàver de Zarys. Obre'l i agafa el <Item name="Frasco de Hierro" />.
+                                </Step>
+                            </Phase>
 
-                        {/* FASE 3 */}
-                        <Phase num="3" title="El Final de Kagha i l'Ídol" level="4">
-                            <p>Per aconseguir l'Anell de Protecció (Vital per al Paladí) sense matar els Tieflings, hem de seguir aquest ordre estricte.</p>
+                            {/* FASE 3 */}
+                            <Phase num="3" title="Kagha, el Ritual i l'Ídol" level="4">
+                                <p>Tornem a l'Arboleda per resoldre el conflicte i aconseguir l'anell del tanc.</p>
 
-                            <h3 className="mt-8">1. Desemmascarar a Kagha</h3>
-                            <Step num="01">
-                                Viatja a la <strong>Ciénaga Putrefacta</strong> (Sunlit Wetlands) al sud.
-                            </Step>
-                            <Step num="02">
-                                Salta cap a una illa al sud-est del mapa (hi haurà enemics arbre "Woads" i Mephits).
-                            </Step>
-                            <Step num="03">
-                                Al final de l'illa, hi ha un tronc d'arbre gran. Obre'l i llegeix la <strong>Carta de Kagha</strong>. Descobriràs que és una traïdora.
-                            </Step>
-                            <Step num="04">
-                                Torna a l'Arboleda. Entra a parlar amb Kagha i digues-li: "Sé la verdad sobre los Druidas de las Sombras".
-                            </Step>
-                            <Step num="05">
-                                Comença un combat. Mata a Kagha i a les rates que es transformen. Els altres druides (com Rath) t'ajudaran.
-                            </Step>
-                            <Tip>
-                                En matar la Kagha, el <strong>Ritual dels Druides s'atura</strong>. Ja no estan concentrats fent màgia. Aquest és el moment clau.
-                            </Tip>
-                            <Step num="06">
-                                Del cadàver de Kagha, agafa el collaret <Item name="Venganza de la Madre de la Camada" /> (dona-li a Lae'zel o Karlach, fa que l'arma faci dany de verí quan et curen).
-                            </Step>
+                                <h3>1. La Prova</h3>
+                                <Step n="1">
+                                    Ves al <strong>Pantà (Sunlit Wetlands)</strong> al sud. Salta cap a l'illa del sud-est (amb Mephits).
+                                </Step>
+                                <Step n="2">
+                                    Busca un tronc d'arbre buit (necessites percepció). Troba la <strong>Carta de Kagha</strong>.
+                                </Step>
 
-                            <h3 className="mt-8">2. El Robatori Segur</h3>
-                            <Step num="07">
-                                Deixa el teu Paladí i la resta del grup al campament o molt lluny. Agafa només a <strong>Astarion</strong>.
-                            </Step>
-                            <Step num="08">
-                                Activa el <strong>Modo por Turnos</strong>. Llança l'encanteri <Item name="Nube de Oscurecimiento" /> (Fog Cloud) just a sobre de l'Ídol de Silvanus.
-                            </Step>
-                            <Step num="09">
-                                Entra dins del núvol (sigil). Fes clic a l'Ídol per agafar-lo.
-                            </Step>
-                            <Step num="10">
-                                <strong>IMMEDIATAMENT</strong>, obre el mapa (M) i fes viatge ràpid al Campament. No surtis caminant del núvol o els druides t'interrogaran.
-                            </Step>
-                            <Step num="11">
-                                Torna a entrar al cau dels nens i entrega l'Ídol a la Mol. Et donarà l'<Item name="Anillo de Protección" char="mc" /> (+1 CA i Salvacions). Equipa'l al teu Paladí per sempre.
-                            </Step>
-                        </Phase>
+                                <h3>2. La Confrontació</h3>
+                                <Step n="3">
+                                    Torna a l'Arboleda. Enfronta a Kagha ("Sé la verdad"). Mata-la i als druides foscos.
+                                </Step>
+                                <Tip>
+                                    En morir Kagha, el ritual màgic s'atura. Els Tieflings estan salvats i els druides ja no vigilen l'Ídol tan de prop.
+                                </Tip>
+                                <Step n="4">
+                                    Agafa del seu cadàver el <Item name="Venganza de la Madre de la Camada" /> (Collaret bo per a personatges d'armes).
+                                </Step>
 
-                        {/* FASE 4 */}
-                        <Phase num="4" title="Infiltració Goblin i Compres" level="4-5">
-                            <p>No entris matant. Necessitem comprar coses primer.</p>
+                                <h3>3. El Robatori Segur</h3>
+                                <Step n="5">
+                                    Amb el ritual aturat, deixa el grup lluny. Usa Astarion (sol).
+                                </Step>
+                                <Step n="6">
+                                    Activa <strong>Modo por Turnos</strong>. Llança <Item name="Nube de Oscurecimiento" /> (o Oscuridad) sobre l'Ídol.
+                                </Step>
+                                <Step n="7">
+                                    Entra al núvol, roba l'ídol i <strong>fes viatge ràpid al campament immediatament</strong>. No surtis caminant.
+                                </Step>
+                                <Step n="8">
+                                    Torna al cau dels nens. Dona-li l'Ídol a la Mol. Recompensa: <Item name="Anillo de Protección" char="mc" /> (+1 CA/Salvacions).
+                                </Step>
+                            </Phase>
 
-                            <Step num="01">
-                                Entra al Campamento Goblin usant la persuasió o els poders il·lícids a la guàrdia.
-                            </Step>
-                            <Step num="02">
-                                <strong>Mercader Grat (Pati Exterior):</strong> Busca al goblin venedor. Compra l'<Item name="Anillo del Regreso" char="laezel" />.
-                                <br/><em>Explicació Build:</em> Lae'zel (Caballero Arcano) llançarà la seva llança/daga sovint. Aquest anell fa que l'arma torni automàticament a la mà. És OBLIGATORI per la seva build.
-                            </Step>
-                            <Step num="03">
-                                Compra també les <Item name="Botas de Ayuda y Consuelo" char="sh" />. Fan que quan Shadowheart curi algú, li doni punts de vida temporal extra.
-                            </Step>
-                            <Step num="04">
-                                <strong>Mercader Roah (Interior):</strong> Entra al temple. A la dreta hi ha la venedora Halfling. Compra l'<Item name="Arco de la Banshee" />.
-                            </Step>
-                            <Step num="05">
-                                <strong>El Ritual de Loviatar:</strong> Busca a Abdirak a l'habitació de la dreta (Sala del Dolor). Accepta que et pegui. Posa't mirant a la paret. Supera les tirades de Constitució. <strong>NO CRIDIS</strong>.
-                                <br/>Rebràs el tret permanent <Item name="Amor de Loviatar" char="mc" /> (+2 atac/salvacions quan tens menys del 30% de vida).
-                            </Step>
-                        </Phase>
+                            {/* FASE 4 */}
+                            <Phase num="4" title="Campament Goblin (Compres)" level="4">
+                                <Warning>Entra pacíficament. No matis a ningú encara. Necessitem comprar.</Warning>
+                                <Step n="1">
+                                    Usa el paràsit o la persuasió per entrar.
+                                </Step>
+                                <Step n="2">
+                                    <strong>Grat (Pati Exterior):</strong> Compra l'<Item name="Anillo del Regreso" char="laezel" />.
+                                    <br/><em>Vital:</em> La build de Caballero Arcano es basa en llançar l'arma. Aquest anell fa que torni sola.
+                                </Step>
+                                <Step n="3">
+                                    Compra també les <Item name="Botas de Ayuda y Consuelo" char="sh" /> (Vida temporal en curar).
+                                </Step>
+                                <Step n="4">
+                                    <strong>Roah Moonglow (Interior):</strong> Compra l'<Item name="Arco de la Banshee" />.
+                                </Step>
+                                <Step n="5">
+                                    <strong>Abdirak (Sala Dreta):</strong> Deixa que et pegui (sense cridar). Aconsegueix el buff permanent <Item name="Amor de Loviatar" char="mc" />. Després mata'l per la seva maça.
+                                </Step>
+                                <Step n="6">
+                                    Salva a <strong>Volo</strong> el bard, allibera'l i envia'l al campament (et donarà un ull que veu invisibilitat més tard).
+                                </Step>
+                            </Phase>
 
-                        {/* FASE 5 */}
-                        <Phase num="5" title="La Purga (Venjança)" level="5">
-                            <p>Ara sí, que comenci la festa. Elimina els líders en aquest ordre per evitar que tot el campament t'ataqui de cop.</p>
+                            {/* FASE 5 */}
+                            <Phase num="5" title="PUSH A NIVELL 5 (Underdark)" level="4-5">
+                                <p>No lluitis contra els líders a nivell 4. Anem a l'Underdark per fer-nos forts.</p>
 
-                            <Step num="01">
-                                <strong>Sacerdotisa Tripas:</strong> Parla amb ella. Digues que vols que et miri el paràsit. Segueix-la a la seva habitació. Tanca la porta. Fes que tot el grup entri.
-                                <br/>Mata-la en <strong>UN SOL TORN</strong>. Si arriba al seu torn, cridarà i vindran reforços. Fes servir el "Castigo Divino" (Smite) de nivell 2.
-                            </Step>
-                            <Step num="02">
-                                <strong>Minthara:</strong> Està a la sala de l'est. Ataca-la directament. Com a Paladí de Venjança, usa la teva "Voto de Enemistad" en ella per tenir avantatge.
-                                <br/>Agafa la seva armadura i el paràsit.
-                            </Step>
-                            <Step num="03">
-                                <strong>Dror Ragzlin:</strong> Està al tron. Abans de parlar, puja per les escales de mà a les bigues del sostre. Col·loca a Gale i Astarion a dalt.
-                                <br/>Ataca des de dalt (avantatge d'altura). Si el combat es complica, tira el Frasco de Hierro al mig dels goblins.
-                            </Step>
-                            <Step num="04">
-                                Baixa a les masmorres (porta prop de Minthara), mata als carcellers i allibera a <strong>Halsin</strong>.
-                            </Step>
-                        </Phase>
+                                <h3>Entrada i Phalar Aluve</h3>
+                                <Step n="1">
+                                    Parla amb la <strong>Sacerdotisa Tripas</strong>. Segueix-la a la seva habitació. Tanca la porta.
+                                </Step>
+                                <Step n="2">
+                                    Mata-la en <strong>1 torn</strong> (Smite nivell 2 + Crítics). Si no mor en 1 torn, cridarà reforços.
+                                </Step>
+                                <Step n="3">
+                                    Obre la porta secreta del fons (Puzle Llunes o forceja la palanca). Baixa a la <strong>Infraoscuridad (Underdark)</strong>.
+                                </Step>
+                                <Step n="4">
+                                    Arribes al Puesto Avanzado de Selune. Surt per la porta OEST (on hi ha un Beholder petrificat).
+                                </Step>
+                                <Step n="5">
+                                    A pocs metres, clavada en una pedra, hi ha l'espasa <Item name="Phalar Aluve" char="sh" />.
+                                    <br/><em>Ús:</em> Shadowheart ha d'activar "Cantar" per donar un bonus d'atac massiu a tot el grup.
+                                </Step>
 
-                        {/* FASE 6 */}
-                        <Phase num="6" title="Festa, Romanç i Underdark" level="5+">
-                            <p>És hora de celebrar i aconseguir els objectes finals de les builds a l'Underdark.</p>
+                                <h3>L'Armadura Radiant (Luminous Armour)</h3>
+                                <Step n="6">
+                                    Torna al Puesto Avanzado de Selune (on has arribat). Explora l'edifici.
+                                </Step>
+                                <Step n="7">
+                                    A la zona superior o darrere una paret secreta a la dreta, hi ha un cofre opulent tancat.
+                                </Step>
+                                <Step n="8">
+                                    Obre'l per trobar l'<Item name="Armadura Luminosa" char="mc" />.
+                                    <br/><em>Build Radiant:</em> Quan fas mal radiant (Smite, etc.), causes una ona de xoc que aplica -1 a l'atac als enemics. És l'armadura clau del Paladí.
+                                </Step>
 
-                            <h3 className="mt-8">1. La Nit del Romanç</h3>
-                            <Step num="01">
-                                Torna a l'Arboleda, parla amb Zevlor i accepta anar al campament.
-                            </Step>
-                            <Step num="02">
-                                Parla amb <strong>Shadowheart</strong>. Accepta beure vi. Tria l'opció: <em>"No puedo evitar sentir que tú y yo..."</em> o buscar un moment privat.
-                            </Step>
-                            <Step num="03">
-                                Si Lae'zel et proposa sexe, <strong>REBUTJA-LA</strong> ("Esta noche no"). Si acceptes a Lae'zel, el joc pot bloquejar l'escena de Shadowheart.
-                            </Step>
-                            <Step num="04">
-                                Quan vagis al sac de dormir, tria "Pensar en Shadowheart". Tindràs l'escena del petó.
-                            </Step>
+                                <Step n="9">
+                                    Explora la Torre Arcana (Sud-oest) i els Micònids (Nord) fins que <strong>PUGIS A NIVELL 5</strong>.
+                                    <br/>A nivell 5 tens 2 atacs per torn i Boles de Foc. Ara estàs llest.
+                                </Step>
+                            </Phase>
 
-                            <h3 className="mt-8">2. L'Objecte Sagrat del Paladí (Underdark)</h3>
-                            <Step num="05">
-                                Entra a l'Underdark (Infraoscuridad) des de l'habitació de la Sacerdotisa Tripas (resol el puzle de les llunes o força la palanca).
-                            </Step>
-                            <Step num="06">
-                                Arribaràs al <strong>Puesto Avanzado de Selune</strong>. Explora l'edifici. Busca una paret falsa o puja a les reixes superiors.
-                            </Step>
-                            <Step num="07">
-                                Has de trobar un cofre daurat opulente. Dins hi ha l'<Item name="Armadura Luminosa" char="mc" /> (Luminous Armour).
-                                <br/><Tip>Aquesta és la peça clau de la teva build. Quan fas dany radiant, provoca una ona de xoc que aplica "Orbe Radiante" (-1 atac) als enemics. Com que ets Paladí, fas dany radiant constantment.</Tip>
-                            </Step>
+                            {/* FASE 6 */}
+                            <Phase num="6" title="La Massacre Goblin" level="5">
+                                <p>Torna al temple Goblin. Ara els destrossaràs.</p>
+                                <Step n="1">
+                                    <strong>Minthara:</strong> Ataca-la. Amb 2 atacs per torn i l'Espasa de Plata/Justícia, durarà 1 torn. Agafa la seva armadura i el paràsit.
+                                </Step>
+                                <Step n="2">
+                                    <strong>Dror Ragzlin:</strong> Puja a les bigues del sostre. Col·loca a Gale i Astarion a dalt.
+                                </Step>
+                                <Step n="3">
+                                    Inicia el combat des de dalt. Fes que Gale tiri Boles de Foc. Usa l'Espasa de Plata amb Lae'zel.
+                                </Step>
+                                <Step n="4">
+                                    Baixa a les masmorres (Worg Pens). Mata els goblins i allibera a <strong>Halsin</strong>.
+                                </Step>
+                            </Phase>
 
-                            <h3 className="mt-8">3. L'Espasa de Shadowheart</h3>
-                            <Step num="08">
-                                Surt del Puesto Avanzado per la porta de l'esquerra (oest). Veuràs un Beholder petrificat.
-                            </Step>
-                            <Step num="09">
-                                Just davant, clavada en una pedra, hi ha l'espasa <Item name="Phalar Aluve" char="sh" />.
-                            </Step>
-                            <Step num="10">
-                                Shadowheart ha de portar aquesta espasa (té competència perquè és Drow/Elfa o Clérigo de Guerra/Llum). La seva habilitat "Cantar" dona +1d4 a l'atac a tots els aliats propers.
-                            </Step>
+                            {/* FASE 7 */}
+                            <Phase num="7" title="Grymforge & La Forja Adamantina" level="5">
+                                <Warning>La Forja és Acte 1. Fes-la abans de marxar.</Warning>
+                                
+                                <h3>Viatge i Motlles</h3>
+                                <Step n="1">
+                                    Torna a l'Underdark (vaixell a la platja). Viatja a Grymforge.
+                                </Step>
+                                <Step n="2">
+                                    <strong>Molde de Escudo:</strong> Al principi de Grymforge, puja les escales a l'esquerra. Darrere d'una porta tancada amb dos esquelets, al fons d'un dormitori.
+                                </Step>
+                                <Step n="3">
+                                    <strong>Molde de Tablillas (Splint):</strong> Viatja a la part superior (passarelles). Està prop del punt de viatge ràpid de la "Forja Antigua", en un esquelet mirant a la lava.
+                                </Step>
 
-                            <h3 className="mt-8">4. La Forja de Adamantina</h3>
-                            <Step num="11">
-                                Agafa el vaixell a la platja de l'Underdark cap a Grymforge.
-                            </Step>
-                            <Step num="12">
-                                Troba els motlles d'Armadura de Tablillas (Splint) i d'Escut.
-                            </Step>
-                            <Step num="13">
-                                Mata al cap Grym a la Forja Antiga (usa el martell gegant del centre atraient-lo amb un personatge).
-                            </Step>
-                            <Step num="14">
-                                Crea l'<Item name="Armadura de Tablillas de Adamantina" char="laezel" /> (Armadura Pesada, AC 17, redueix dany i immune a crítics). Perfecta per Lae'zel.
-                            </Step>
-                            <Step num="15">
-                                Crea l'<Item name="Escudo de Adamantina" char="sh" /> per a Shadowheart (aplica trontoll als enemics que la fallin).
-                            </Step>
-                        </Phase>
+                                <h3>Mineral de Mitral (Només n'hi ha 2)</h3>
+                                <Step n="4">
+                                    <strong>Mineral 1:</strong> Baixant cap a la forja, a l'esquerra del camí principal, hi ha un caminet que creua la lava. Al fons hi ha una vena blava brillant. Trenca-la.
+                                </Step>
+                                <Step n="5">
+                                    <strong>Mineral 2:</strong> Just abans d'entrar a la forja, ves a la dreta on hi ha molts monstres de foc (Magma Mephits). La vena està al fons.
+                                </Step>
 
-                        {/* FASE 7 */}
-                        <Phase num="7" title="El Paso de la Montaña" level="5+">
-                            <p>Finalment, abans de passar a l'Acte 2 (Shadow Cursed Lands), completarem el Monestir.</p>
+                                <h3>La Creació i el Cap Grym</h3>
+                                <Step n="6">
+                                    Baixa a la Forja Central. Insereix el Motlle (Tablillas) i el Mineral. Estira la palanca de lava.
+                                </Step>
+                                <Step n="7">
+                                    Apareixerà <strong>Grym</strong> (Nv 8). És immune a tot menys als cops contundents (Martells).
+                                </Step>
+                                <Step n="8">
+                                    <strong>Estratègia:</strong> Atrau a Grym al centre de la forja (sobre el martell gegant). Un personatge ha d'estirar la palanca del martell. El cop li farà moltíssim mal. Repeteix.
+                                </Step>
+                                <Step n="9">
+                                    Recull l'<Item name="Armadura de Adamantina" char="laezel" /> (Pesada, immune a crítics) per a Lae'zel.
+                                </Step>
+                                <Step n="10">
+                                    Repeteix el procés amb el Motlle d'Escut per fer l'<Item name="Escudo de Adamantina" char="sh" />.
+                                </Step>
+                            </Phase>
 
-                            <Step num="01">
-                                Viatja al "Paso de la Montaña" (ara sí que pots entrar, ja has salvat els Tieflings).
-                            </Step>
-                            <Step num="02">
-                                Ves al <strong>Monasterio de Rosymorn</strong>.
-                            </Step>
-                            <Step num="03">
-                                A dins, troba el venedor del Creche Githyanki (A'jak'nir Jeera).
-                            </Step>
-                            <Step num="04">
-                                Compra (o roba amb Astarion) els <Item name="Guantes de Destreza" char="astarion" />. Fixen la destresa a 18. Són boníssims per a Astarion o per al teu Paladí si tens poca destresa.
-                            </Step>
-                            <Step num="05">
-                                <strong>LA SANGRE DE LATHANDER:</strong>
-                                <br/>Completa el puzle de les armes cerimonials a la part superior del monestir per aconseguir el "Blasón del Maestro del Alba".
-                                <br/>Entra a la cambra secreta del Creche (després de la sala de l'Inquisidor). Posa el blasó al mecanisme.
-                            </Step>
-                            <Step num="06">
-                                Aconsegueix la <Item name="Sangre de Lathander" char="mc" />.
-                                <br/>Aquesta maça + Armadura Luminosa + Build Venjança et converteixen en una màquina de matar radiant.
-                            </Step>
-                        </Phase>
+                            {/* FASE 8 */}
+                            <Phase num="8" title="Final Acte 1: Monestir" level="6">
+                                <p>Abans d'entrar a les Shadowlands, completem el Creche.</p>
+                                
+                                <Step n="1">
+                                    Viatja al Paso de la Montaña. Entra al <strong>Monasterio de Rosymorn</strong>.
+                                </Step>
+                                <Step n="2">
+                                    Troba la venedora del Creche (A'jak'nir Jeera). Compra els <Item name="Guantes de Destreza" char="astarion" />. (Fixen la DES a 18).
+                                </Step>
+                                <Step n="3">
+                                    Completa el puzle de les Armes Cerimonials al sostre per obtenir el Blasón.
+                                </Step>
+                                <Step n="4">
+                                    Entra a la sala secreta de l'Inquisidor. Gira les estàtues. Posa el Blasón.
+                                </Step>
+                                <Step n="5">
+                                    Aconsegueix la <Item name="Sangre de Lathander" char="mc" />.
+                                </Step>
+                                <Step n="6">
+                                    Felicitats. Tens totes les builds completes, romanç actiu i nivell 6. Preparat per l'Acte 2.
+                                </Step>
+                            </Phase>
 
-                    </main>
-                    
-                    <footer className="text-center mt-20 text-gray-600 font-title text-sm uppercase tracking-widest border-t border-border pt-8 pb-10">
-                        "En mi nombre, que no prospere el mal."
+                        </main>
+                    </div>
+
+                    <InventorySection />
+
+                    <footer className="text-center mt-20 text-gray-600 font-title text-sm uppercase tracking-widest border-t border-border pt-8 pb-8">
+                        Guia Completa Finalitzada
                     </footer>
                 </div>
             );
