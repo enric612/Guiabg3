@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baldur's Gate 3 - Menú Principal</title>
+    
+    <!-- Fonts i Llibreries (Les mateixes que a la guia per coherència) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'title': ['Cinzel', 'serif'],
+                        'body': ['Spectral', 'serif'],
+                    },
+                    colors: {
+                        gold: '#d4af37',     
+                        darkGold: '#8c7546', 
+                        pureBlack: '#000000',
+                        border: '#262626',   
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { 
+            background-color: #000000; 
+            color: #d4d4d4; 
+            background-image: url('https://baldursgate3.game/images/media/wallpapers/desktop/elf-city-1920x1080.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.85);
+            min-height: 100vh;
+            backdrop-filter: blur(5px);
+        }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
+            border-color: #d4af37;
+        }
+    </style>
+</head>
+<body class="font-body antialiased">
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const Menu = () => {
+            return (
+                <div className="overlay flex flex-col items-center justify-center min-h-screen px-6 fade-in">
+                    
+                    {/* TÍTOL PRINCIPAL */}
+                    <div className="text-center mb-16">
+                        <h1 className="text-5xl md:text-8xl font-title font-black text-gold tracking-widest uppercase mb-4 drop-shadow-2xl">
+                            Baldur's Gate 3
+                        </h1>
+                        <p className="text-xl md:text-2xl text-gray-300 font-title italic tracking-wide">
+                            Guia de la Ruta Heroica
+                        </p>
+                        <div className="h-1 w-32 bg-gold mx-auto mt-8 rounded-full opacity-80"></div>
+                    </div>
+
+                    {/* GRID DE TARGETES */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+                        
+                        {/* TARGETA ACTE 1 (ACTIVA) */}
+                        <a href="acte1.html" className="group relative bg-black/80 border border-border p-10 rounded-xl transition-all duration-300 card-hover block text-center md:text-left decoration-transparent">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gold opacity-0 group-hover:opacity-100 transition-opacity rounded-t-xl"></div>
+                            
+                            <div className="flex justify-between items-start mb-6">
+                                <span className="text-6xl font-title font-bold text-white group-hover:text-gold transition-colors">I</span>
+                                <span className="text-xs font-title uppercase tracking-widest text-black bg-gold px-2 py-1 rounded font-bold">Disponible</span>
+                            </div>
+                            
+                            <h2 className="text-3xl font-title font-bold text-white mb-2 group-hover:text-gold transition-colors">L'Ascens</h2>
+                            <p className="text-gray-400 mb-6 text-sm">
+                                Del Nautiloide a les terres salvatges. Builds inicials, l'Espasa de Plata i la Forja de Adamantina.
+                            </p>
+                            
+                            <div className="flex gap-2 text-xs font-title uppercase tracking-widest text-darkGold opacity-80">
+                                <span>Nivell 1-6</span>
+                                <span>•</span>
+                                <span>Wilderness</span>
+                            </div>
+                        </a>
+
+                        {/* TARGETA ACTE 2 (DESACTIVADA) */}
+                        <div className="relative bg-black/40 border border-border/30 p-10 rounded-xl text-center md:text-left opacity-50 cursor-not-allowed">
+                            <div className="flex justify-between items-start mb-6">
+                                <span className="text-6xl font-title font-bold text-gray-700">II</span>
+                                <span className="text-xs font-title uppercase tracking-widest text-gray-500 border border-gray-700 px-2 py-1 rounded">Bloquejat</span>
+                            </div>
+                            <h2 className="text-3xl font-title font-bold text-gray-600 mb-2">Les Ombres</h2>
+                            <p className="text-gray-600 mb-6 text-sm">
+                                Moonrise Towers i la Maledicció de les Ombres.
+                            </p>
+                        </div>
+
+                        {/* TARGETA ACTE 3 (DESACTIVADA) */}
+                        <div className="relative bg-black/40 border border-border/30 p-10 rounded-xl text-center md:text-left opacity-50 cursor-not-allowed">
+                            <div className="flex justify-between items-start mb-6">
+                                <span className="text-6xl font-title font-bold text-gray-700">III</span>
+                                <span className="text-xs font-title uppercase tracking-widest text-gray-500 border border-gray-700 px-2 py-1 rounded">Bloquejat</span>
+                            </div>
+                            <h2 className="text-3xl font-title font-bold text-gray-600 mb-2">La Ciutat</h2>
+                            <p className="text-gray-600 mb-6 text-sm">
+                                L'enfrontament final a Baldur's Gate.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    {/* FOOTER */}
+                    <footer className="mt-20 text-gray-600 font-title text-xs uppercase tracking-widest">
+                        Selecciona un capítol per començar la teva aventura
+                    </footer>
+
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Menu />);
+    </script>
+</body>
+</html>
